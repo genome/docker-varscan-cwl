@@ -15,7 +15,7 @@ REFERENCE="$3"
 OUTPUT="${HOME}/output"
 
 java -jar /opt/varscan/VarScan.jar somatic \
-    <(/usr/bin/samtools --no-baq -f "$REFERENCE" "$NORMAL_BAM" "$TUMOR_BAM") \
+    <(/usr/bin/samtools mpileup --no-baq -f "$REFERENCE" "$NORMAL_BAM" "$TUMOR_BAM") \
     $OUTPUT \
     --mpileup 1 \
     --output-vcf
